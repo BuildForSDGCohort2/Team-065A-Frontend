@@ -4,8 +4,8 @@ import './form-input.css'
 
 const FormInput = ({ handleChange, label, ...otherProps }) => {
   return(
-    <div className="group">
-        <label for="loginemail">{label}</label>
+    <div className="form-group">
+        <label htmlFor="loginemail">{ label }</label>
         <input type="email" name="loginemail" id="loginemail" onChange={handleChange} {...otherProps} required />
     </div>
    )

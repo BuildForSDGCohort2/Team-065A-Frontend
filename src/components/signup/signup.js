@@ -1,16 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './signup.css'
-// import FormInput from '../form-input/form-input';
-// import CustomButton from '../button/custom-button';
+import FormInput from '../form-input/form-input';
+import CustomButton from '../button/custom-button';
 
 class SignUp extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            full_name: '',
             email: '',
-            password: ''
+            phone: '',
+            password: '',
+            password_confirmation: '',
+            user_type: ''
         }
     }
 
@@ -43,39 +47,52 @@ class SignUp extends React.Component {
 
                         <div className="col form">
                             <div className="signup form-peice">
-                                <form className="signup-form">
+                                <form className="signup-form" onSubmit={this.handleSubmit}>
 
-                                    <div className="form-group">
-                                        <label id="active" htmlFor="name" className="form__label">Full Name</label>
-                                        <input type="text" name="username" id="name" className="name input"></input>
-                                        <span className="error"></span>
-                                    </div>
+                                    <FormInput name="full_name"
+                                        type="full_name"
+                                        value={this.state.full_name}
+                                        handleChange={this.handleChange}
+                                        label="full name"
+                                        required />
 
-                                    <div htmlFor="form-group">
-                                        <label id="active" htmlFor="email">Email Adderss</label>
-                                        <input type="email" name="emailAdress" id="email" className="email input"></input>
-                                        <span className="error"></span>
-                                    </div>
+                                    <FormInput name="email"
+                                        type="email"
+                                        value={this.state.email}
+                                        handleChange={this.handleChange}
+                                        label="Email"
+                                        required />
 
-                                    <div className="form-group">
-                                        <label id="active" htmlFor="phone">Phone Number - <small>Optional</small></label>
-                                        <input type="text" name="phone" id="phone" className="input"></input>
-                                    </div>
+                                        <FormInput name="phone"
+                                        type="phone"
+                                        value={this.state.phone}
+                                        handleChange={this.handleChange}
+                                        label="phone number"
+                                        required />
 
-                                    <div htmlFor="form-group">
-                                        <label id="active" htmlFor="password">Password</label>
-                                        <input type="password" name="password" id="password" className="pass input"></input>
-                                        <span className="error"></span>
-                                    </div>
+                                        <FormInput name="password"
+                                        type="password"
+                                        value={this.state.password}
+                                        handleChange={this.handleChange}
+                                        label="password"
+                                        required />
 
-                                    <div className="form-group">
-                                        <label id="active" htmlFor="passwordCon">Confirm Password</label>
-                                        <input type="password" name="passwordCon" id="passwordCon" className="passConfirm input"></input>
-                                        <span className="error"></span>
-                                    </div>
+                                        <FormInput name="password_confirmation"
+                                        type="password_confirmation"
+                                        value={this.state.password_confirmation}
+                                        handleChange={this.handleChange}
+                                        label="confirm password"
+                                        required />
+
+                                        {/* <FormInput name="user_type"
+                                        type="user_type"
+                                        value={this.state.user_type}
+                                        handleChange={this.handleChange}
+                                        label=""
+                                        required /> */}
 
                                     <div className="btnAccount">
-                                        <input type="submit" value="Signup Now" id="submit"></input>
+                                    <CustomButton type="submit" > Login </CustomButton>
                                         <Link to='/sign_in'>I have an account</Link>
                                     </div>
                                 </form>

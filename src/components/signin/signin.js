@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './signin.css';
-// import FormInput from '../form-input/form-input';
-// import CustomButton from '../button/custom-button';
+import FormInput from '../form-input/form-input';
+import CustomButton from '../button/custom-button';
 
 class SignIn extends React.Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class SignIn extends React.Component {
                         <div className="col form">
                             <div id="login-form" className="login form-peice">
                                 <form className="login-form" onSubmit={this.handleSubmit}>
-                                    {/* <FormInput name="email"
+                                    <FormInput name="email"
                                         type="email"
                                         value={this.state.email}
                                         handleChange={this.handleChange}
@@ -57,13 +57,13 @@ class SignIn extends React.Component {
                                         value={this.state.password}
                                         handleChange={this.handleChange}
                                         label="Password"
-                                        required /> */}
+                                        required />
 
-                                    {/* <div className="btnAccount">
-                                        <CustomButton type="submit"> Login </CustomButton>
+                                    <div className="btnAccount">
+                                        <CustomButton type="submit" > Login </CustomButton>
                                         <Link to='./sign_up'>I'm New</Link>
-                                    </div> */}
-                                    <div htmlFor="form-group">
+                                    </div>
+                                    {/* <div htmlFor="form-group">
                                         <label id="active" htmlFor="email">Email Adderss</label>
                                         <input type="email" name="emailAdress" id="email" className="email input"></input>
                                         <span className="error"></span>
@@ -78,7 +78,7 @@ class SignIn extends React.Component {
                                     <div className="btnAccount">
                                         <input type="submit" value="Signup Now" id="submit"></input>
                                         <Link to='/sign_up'>I have an account</Link>
-                                    </div>
+                                    </div> */}
                                 </form>
                             </div>
                         </div>

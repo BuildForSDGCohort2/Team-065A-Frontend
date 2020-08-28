@@ -5,8 +5,14 @@ import './form-input.css'
 const FormInput = ({ handleChange, label, ...otherProps }) => {
   return(
     <div className="form-group">
-        <label htmlFor="loginemail">{ label }</label>
-        <input type="email" name="loginemail" id="loginemail" onChange={handleChange} {...otherProps} required />
+        {
+            label ?
+            (<label className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}>
+                {label}
+            </label>)
+            : null
+        }
+        <input type="email" name="loginemail" onChange={handleChange} {...otherProps} required />
     </div>
    )
 

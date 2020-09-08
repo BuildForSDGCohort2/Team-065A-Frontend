@@ -1,15 +1,13 @@
-import React from 'react'
-import './sign-in.css'
-import SignIn from '../../components/signin/signin'
+import React from 'react';
+import './sign-in.css';
 
 
 const SignInPage = (props) => {
   return(
     <div className="sign-in">
-      <SignIn />
     </div>
    )
 
  }
 
-export default SignInPage
+export default SignInPage;

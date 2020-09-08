@@ -1,5 +1,5 @@
-import React from 'react'
-import './homepage.css'
+import React from 'react';
+import './homepage.css';
 
 const HomePage = () => (
     <div className='homepage'>
@@ -7,4 +7,4 @@ const HomePage = () => (
     </div>
   );
 
-export default HomePage
+export default HomePage;

@@ -1,8 +1,8 @@
-import React from 'react'
-import './custom-button.css'
+import React from 'react';
+import './custom-btn.css';
 import Button from 'react-bootstrap/Button';
 
-const CustomButton = ({ children, ...otherProps }) => {
+const CustomBtn = ({ children, ...otherProps }) => {
   return(
     <Button className="custom-button" {...otherProps}>
         {children}
@@ -11,4 +11,4 @@ const CustomButton = ({ children, ...otherProps }) => {
 
  }
 
-export default CustomButton
+export default CustomBtn;

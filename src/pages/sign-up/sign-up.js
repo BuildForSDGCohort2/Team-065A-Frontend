@@ -1,15 +1,13 @@
-import React from 'react'
-import './sign-up.css'
-import SignUp from '../../components/signup/signup'
+import React from 'react';
+import './sign-up.css';
 
 
 const SignUpPage = (props) => {
   return(
     <div className="sign-up">
-      <SignUp />
-      </div>
-   )
-
+    
+    </div>
+   );
  }
 
-export default SignUpPage
+export default SignUpPage;

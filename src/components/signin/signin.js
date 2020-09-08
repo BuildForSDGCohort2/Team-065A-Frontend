@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './signin.css';
 import FormInput from '../form-input/form-input';
 import CustomButton from '../button/custom-button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class SignIn extends React.Component {
     constructor(props) {
@@ -30,19 +32,19 @@ class SignIn extends React.Component {
         return (
             <div className="container">
                 <section id="formHolder">
-                    <div className="row">
+                    <Row>
 
                         {/* Brand Box */}
-                        <div className="col-md-6 brand">
+                        <Col sm={12} md={6} lg={6} className="brand">
 
                             <div className="heading">
                                 <h2>QuaTeach</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
                             </div>
-                        </div>
+                        </Col>
 
                         {/* Form Box */}
-                        <div className="col form">
+                        <Col sm={12} md={6} lg={6} className="form">
                             <div id="login-form" className="login form-peice">
                                 <form className="login-form" onSubmit={this.handleSubmit}>
                                     <FormInput name="email"
@@ -81,9 +83,9 @@ class SignIn extends React.Component {
                                     </div> */}
                                 </form>
                             </div>
-                        </div>
+                        </Col>
 
-                    </div>
+                    </Row>
                 </section>
             </div>
         )

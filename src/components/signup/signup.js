@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './signup.css'
 import FormInput from '../form-input/form-input';
 import CustomButton from '../button/custom-button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class SignUp extends React.Component {
     constructor(props) {
@@ -35,17 +37,16 @@ class SignUp extends React.Component {
             <div className="container">
                 <section id="formHolder">
 
-                    <div className="row">
+                    <Row>
 
-                        <div className="col-sm-6 brand">
-
+                        <Col sm={12} md={6} lg={6} className="brand">
                             <div className="heading">
                                 <h2>QuaTeach</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
                             </div>
-                        </div>
+                        </Col>
 
-                        <div className="col form">
+                        <Col sm={12} md={6} lg={6} className="form">
                             <div className="signup form-peice">
                                 <form className="signup-form" onSubmit={this.handleSubmit}>
 
@@ -97,9 +98,9 @@ class SignUp extends React.Component {
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </Col>
 
-                    </div>
+                    </Row>
                 </section>
             </div>
         )

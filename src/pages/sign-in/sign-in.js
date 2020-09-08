@@ -7,7 +7,7 @@ const SignInPage = (props) => {
   return(
     <div className="sign-in">
       <SignIn />
-      </div>
+    </div>
    )
 
  }

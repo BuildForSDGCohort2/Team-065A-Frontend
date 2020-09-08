@@ -1,11 +1,12 @@
 import React from 'react'
 import './custom-button.css'
+import Button from 'react-bootstrap/Button';
 
 const CustomButton = ({ children, ...otherProps }) => {
   return(
-    <button className="custom-button" {...otherProps}>
+    <Button className="custom-button" {...otherProps}>
         {children}
-    </button>
+    </Button>
    )
 
  }

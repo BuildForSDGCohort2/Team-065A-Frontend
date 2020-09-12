@@ -1,6 +1,9 @@
 /** WRITE YOUR NEWS CARD CODE HERE. DON'T EDIT THE COMMENT PLEASE. **/
-.news-info {
+.news-container {
     background-color: rgb(238, 230, 230);
-    padding-left: 2em !important;
-    padding-top: 1em !important;
+    border-bottom: 1px solid #86BC42;
+}
+
+img {
+    width: 100%;
 }

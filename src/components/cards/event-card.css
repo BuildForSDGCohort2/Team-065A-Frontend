@@ -15,4 +15,13 @@
 
   img {
       width: 100%;
+      position: relative;
+  }
+
+.date {
+background-color: rgb(26, 26, 71);
+position: absolute;
+color: white;
+padding: .8em;
+top: 8.5em
   }

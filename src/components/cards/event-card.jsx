@@ -22,7 +22,7 @@ const EventComponent = () => (
 <h3>06</h3>
 <h6>Sep</h6>
 </div>
-  <div className="container">
+  <div className="container background">
     <h5><b>Learn English In Ease</b></h5> 
     <p><ClockIcon/> 4:00pm - 8:00pm <GeoAltFillIcon/> Lagos Nigeria</p>
     <CustomBtn className='custom-button'>LEARN NOW</CustomBtn>
@@ -36,7 +36,7 @@ const EventComponent = () => (
 <h3>10</h3>
 <h6>Aug</h6>
 </div>
-<div className="container">
+<div className="container background">
     <h5><b>Learn English In Ease</b></h5> 
     <p><ClockIcon/> 4:00pm - 8:00pm <GeoAltFillIcon/> Lagos Nigeria</p>
     <CustomBtn className='custom-button'>LEARN NOW</CustomBtn>
@@ -50,7 +50,7 @@ const EventComponent = () => (
 <h3>08</h3>
 <h6>Jun</h6>
 </div> 
-<div className="container">
+<div className="container background">
     <h5><b>Learn English In Ease</b></h5> 
     <p><ClockIcon/> 4:00pm - 8:00pm <GeoAltFillIcon/> Lagos Nigeria</p>
     <CustomBtn className='custom-button'>LEARN NOW</CustomBtn>

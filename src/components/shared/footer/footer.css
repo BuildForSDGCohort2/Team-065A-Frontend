@@ -1,1 +1,53 @@
 /** WRITE YOUR FOOTER CSS HERE. DON'T EDIT THE COMMENT PLEASE. **/
+
+.footer {
+  padding-top: 3.5em;
+  background: #2d3e50;
+  color: #fff;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 35px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 2px;
+}
+
+li {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.icon {
+  height: 15px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.copyright {
+  background: #86BC42;
+  font-size: 12px;
+  margin-top: 2em;
+}

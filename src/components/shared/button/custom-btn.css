@@ -1,12 +1,15 @@
 .custom-button {
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: uppercase;
-    padding: 5px 30px;
     background: #86BC42;
     color: #fff;
-    border-radius: 30px;
+    font-weight: bold;
+    padding: 10px 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
     border: none;
+    border-radius: 0;
     font-family: "Montserrat", sans-serif;
+    min-width: 150px;
 }

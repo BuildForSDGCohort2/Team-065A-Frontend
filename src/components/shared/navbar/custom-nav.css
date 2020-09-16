@@ -1,11 +1,15 @@
 /** WRITE YOUR NAVBAR CSS HERE. DON'T EDIT THE COMMENT PLEASE. **/
 
+.nav-items {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .top-header {
   background: #2d3e50 none repeat scroll 0 0;
   color: #ffffff;
   font-size: 13px;
   position: relative;
-  padding-top: 15px;
   padding-bottom: 15px;
 }
 
@@ -20,6 +24,7 @@
   background: #86bc42;
   height: 48px;
   top: 10px;
+  z-index: 10;
 }
 
 .skewed-div {
@@ -75,14 +80,38 @@
 }
 
 .nav-link {
+  color: #ffffff !important;
   text-transform: uppercase;
-  font-size: 12px;
-  line-height: 109px;
-  margin-right: 1.5rem;
-  font-weight: bold;
+  font-size: 13px !important;
+  margin: 35px 0 35px 2rem;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   position: relative;
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  border: 2px solid #86bc42;
+}
+
+@media screen and (max-width: 992px) {
+  .ml-auto {
+    background: #2d3e50;
+    text-align: center;
+  }
+  
+  .ml-auto .nav-link {
+    margin: auto;
+  }
+}
+
+
+
+/** account for the absolute positioned carousel **/
+.navbar {
+  margin-bottom: 30%;
+  z-index: 10;
 }

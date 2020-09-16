@@ -25,9 +25,9 @@ const CustomNav = () => (
         </Row>
       </Container>
     </div>
-    <Navbar expand="lg">
-      <Container>
-        <Navbar.Brand href="#home"><img src="/images/quateach.svg" alt="QuaTeach" /></Navbar.Brand>
+    <Navbar variant="dark" expand="lg">
+      <Container className="nav-items">
+        <Navbar.Brand href="#home"><img src="/images/quateach_w.svg" alt="QuaTeach" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

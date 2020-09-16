@@ -7,6 +7,7 @@ import './App.css';
 import AboutUS from './pages/about-us/about-us';
 import ContactUs from './pages/contact-us/contact-us';
 import CustomNav from './components/shared/navbar/custom-nav';
+import Footer from './components/shared/footer/footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/about-us' component={ AboutUS } />
         </Switch>
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }

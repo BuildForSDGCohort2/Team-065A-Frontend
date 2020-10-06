@@ -61,12 +61,12 @@ export default class App extends Component {
     axios.get("https://authentication-backend-rails.herokuapp.com/logged_in", { withCredentials: true })
       .then(response => {
         console.log(response)
-        if (response.data.logged_in && this.state.loggedInStatus == 'NOT_LOGGED_IN') {
+        if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
           this.setState({
             loggedInStatus: 'LOGGED_IN',
             user: response.data.user
           })
-        } else if (!response.data.logged_in & (this.state.loggedInStatus == 'LOGGED_IN')) {
+        } else if (!response.data.logged_in & (this.state.loggedInStatus === 'LOGGED_IN')) {
           this.setState({
             loggedInStatus: 'NOT_LOGGED_IN',
             user: {}
@@ -95,29 +95,31 @@ export default class App extends Component {
         <header>
           <CustomNav />
         </header>
-        <BrowserRouter>
-          <Switch>
-            {/* <Route
-              exact
-              path={"/"}
-              render={props => (
-                <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
-              )}
-            /> */}
-            <Route
-              exact
-              path={"/dashboard"}
-              render={props => (
-                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
-              )}
-            />
-            <Route exact path='/' component={HomePage} />
-            <Route path='/sign_in' component={SignInPage} />
-            <Route path='/sign_up' component={SignUpPage} />
-            <Route path='/contact-us' component={ContactUs} />
-            <Route path='/about-us' component={AboutUS} />
-          </Switch>
-        </BrowserRouter>
+        <main>
+          <BrowserRouter>
+            <Switch>
+              {/* <Route
+                exact
+                path={"/"}
+                render={props => (
+                  <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
+                )}
+              /> */}
+              <Route
+                exact
+                path={"/dashboard"}
+                render={props => (
+                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                )}
+              />
+              <Route exact path='/' component={HomePage} />
+              <Route path='/sign_in' component={SignInPage} />
+              <Route path='/sign_up' component={SignUpPage} />
+              <Route path='/contact-us' component={ContactUs} />
+              <Route path='/about-us' component={AboutUS} />
+            </Switch>
+          </BrowserRouter>
+          </main>
         <Footer />
       </div>
     );

@@ -19,3 +19,26 @@ body {
     /* overflow: hidden; */
     height: 100vh;
 }
+
+.sign-in-form {
+    text-align: center;
+}
+
+.sign-in-header {
+    color: #2d3e50;
+}
+
+.btn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background: #86BC42;
+    border-color: #86BC42;
+}
+
+.btn-primary:hover {
+    background:#4d701f;
+    border-color: #4d701f;
+}

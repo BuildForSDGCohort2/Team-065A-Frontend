@@ -16,6 +16,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import './sign-up.css';
+import { EmailField, PasswordField } from "../../components/auth/auth";
 
 export default class SignUpPage extends Component {
   constructor(props) {
@@ -69,61 +70,64 @@ export default class SignUpPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sign-up-form">
+        <h2 className="sign-up-header">Sign up now!</h2>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="full_name"
-            placeholder="Full Name"
-            value={this.state.full_name}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder="password confirmation"
-            value={this.state.password_confirmation}
-            onChange={this.handleChange}
-            required
-          />
-          <label for="user_type">User Type:</label>
-          <select
-            name="user_type"
-            placeholder=''
-            value={this.state.user_type}
-            onChange={this.handleChange}>
-            <option>teachers</option>
-            <option>parents</option>
-            <option>student</option>
-            <option>schools</option>
-            <option>others</option>
-          </select>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            value={this.state.phone}
-            onChange={this.handleChange}
-            required
-          />
-          <input type="submit" value="Register" />
+        <div className="input-group">
+          <span className="input-group-addon"> I'm a </span>
+            <select
+              className="custom-select"
+              name="user_type"
+              placeholder=''
+              value={this.state.user_type}
+              onChange={this.handleChange}
+              required>
+              <option defaultValue value="teachers">Teacher</option>
+              <option value="parents">Parent</option>
+              <option value="student">Student</option>
+              <option value="schools">School</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+          <div className="input-group">
+            <span className="input-group-addon"> <i className="fa fa-user"></i> </span>
+            <input
+              className="form-control"
+              type="text"
+              name="full_name"
+              placeholder="Full name"
+              value={this.state.full_name}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <EmailField this={this} />
+          <div className="input-group">
+            <span className="input-group-addon"> <i className="fa fa-phone"></i> </span>
+            <input
+              className="form-control"
+              type="text"
+              name="phone"
+              placeholder="Phone number"
+              value={this.state.phone}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <PasswordField this={this} />
+          <div className="input-group">
+            <span className="input-group-addon"> <i className="fa fa-lock"></i> </span>
+            <input
+              className="form-control"
+              type="password"
+              name="password_confirmation"
+              placeholder="Password again"
+              value={this.state.password_confirmation}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <input className="btn btn-primary btn-block" type="submit" value="Register" />
         </form>
       </div>
     );

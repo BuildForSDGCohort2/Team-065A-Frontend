@@ -20,8 +20,36 @@ body {
     height: 100vh;
 } */
 
+.sign-up-form {
+    text-align: center;
+}
+
+.sign-up-header {
+    color: #2d3e50;
+}
+
 form{
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    margin: 30px auto;
+}
+
+.btn {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background: #86BC42;
+    border-color: #86BC42;
+}
+
+.btn-primary:hover {
+    background:#4d701f;
+    border-color: #4d701f;
+}
+
+.input-group {
+    margin-bottom: 10px;
 }

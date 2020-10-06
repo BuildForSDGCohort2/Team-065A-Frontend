@@ -27,16 +27,16 @@ const CustomNav = () => (
     </div>
     <Navbar variant="dark" expand="lg">
       <Container className="nav-items">
-        <Navbar.Brand href="#home"><img src="/images/quateach_w.svg" alt="QuaTeach" /></Navbar.Brand>
+        <Navbar.Brand href="/"><img src="/images/quateach.svg" alt="QuaTeach" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#courses">Courses</Nav.Link>
-            <Nav.Link href="#tutors">Tutors</Nav.Link>
-            <Nav.Link href="#blog">Blog</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="//about">About</Nav.Link>
+            <Nav.Link href="/courses">Courses</Nav.Link>
+            <Nav.Link href="/tutors">Tutors</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

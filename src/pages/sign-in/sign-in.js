@@ -15,6 +15,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import './sign-in.css';
+import { EmailField, PasswordField } from "../../components/auth/auth";
 
 export default class SignInPage extends Component {
   constructor(props) {
@@ -59,25 +60,12 @@ export default class SignInPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="sign-in-form">
+        <h3 className="sign-in-header">Sign in to your account</h3>
         <form onSubmit={this.handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            required
-          />
-          <input type="submit" value="Login" />
+          <EmailField this={this} />
+          <PasswordField this={this} />
+          <input className="btn btn-primary btn-block" type="submit" value="Sign in" />
         </form>
       </div>
     );

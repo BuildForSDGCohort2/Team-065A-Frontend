@@ -1,7 +1,6 @@
 // import React from 'react';
 // import './sign-in.css';
 
-
 // const SignInPage = (props) => {
 //   return(
 //     <div className="sign-in">
@@ -13,8 +12,8 @@
 // export default SignInPage;
 
 import React, { Component } from "react";
-import axios from 'axios';
-import './sign-in.css';
+import axios from "axios";
+import "./sign-in.css";
 import { EmailField, PasswordField } from "../../components/auth/auth";
 
 export default class SignInPage extends Component {
@@ -24,7 +23,7 @@ export default class SignInPage extends Component {
     this.state = {
       email: "",
       password: "",
-      LoginErrors: ""
+      LoginErrors: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,28 +32,33 @@ export default class SignInPage extends Component {
 
   handleChange(event) {
     this.setState({
-        [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit(event) {
-      const { email, password } = this.state
-      axios.post("https://team065a-backend-arch.herokuapp.com/api/v1/sign_in", {
-        user: {
+    const { email, password } = this.state;
+    axios
+      .post(
+        "https://team065a-backend-arch.herokuapp.com/api/v1/sign_in",
+        {
+          login: {
             email: email,
-            password: password
+            password: password,
+          },
+        },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        if (response.data.logged_in) {
+          this.props.handleSuccessfulAuth(response.data);
         }
-      },
-      { withCredentials: true },
-      ).then(response => {
-          if (response.data.logged_in){
-              this.props.handleSuccessfulAuth(response.data)
-          }
-          console.log('login response', response);
-      }).catch(error => {
-          console.log('login error', error);
+        console.log("login response", response);
       })
-      console.log('form submitted')
+      .catch((error) => {
+        console.log("login error", error);
+      });
+    console.log("form submitted");
     event.preventDefault();
   }
 
@@ -65,7 +69,11 @@ export default class SignInPage extends Component {
         <form onSubmit={this.handleSubmit}>
           <EmailField this={this} />
           <PasswordField this={this} />
-          <input className="btn btn-primary btn-block" type="submit" value="Sign in" />
+          <input
+            className="btn btn-primary btn-block"
+            type="submit"
+            value="Sign in"
+          />
         </form>
       </div>
     );

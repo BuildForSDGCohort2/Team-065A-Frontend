@@ -1,0 +1,46 @@
+/** WRITE YOUR NEWS CARD CODE HERE. DON'T EDIT THE COMMENT PLEASE. **/
+.news-container {
+    background-color: rgb(252, 249, 249);
+    border-bottom: 1px solid #86BC42;
+}
+
+.blog-card {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    vertical-align: baseline;
+}
+
+.blog-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.blog-img {
+    float: left;
+}
+
+.blog-img img {
+    min-height: 100%;
+    border: 0;
+    vertical-align: top;
+}
+
+.blog-body {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-bottom: 2px solid #86bc42;
+    overflow: hidden;
+    padding: 30px 5px 35px 30px;
+    min-height: 100%;
+}
+
+.blog-card .btn {
+    margin-bottom: 0;
+}
+
+.news-card .see-all {
+    position: relative;
+    margin: auto;
+}
+  

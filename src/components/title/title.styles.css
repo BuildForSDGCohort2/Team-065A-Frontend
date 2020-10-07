@@ -1,0 +1,34 @@
+.title{
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  
+  .span {
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+  
+  .span:before, .span:after {
+    content: '';
+    width: 120px;
+    transform: translateY( 10px );
+    height: 1px;
+    background: rgb(7, 7, 7);
+    position: absolute;
+  }
+  
+  .span:before {
+  right: 80%;  
+  }
+  .span:after {
+  left: 80%;  
+  }
+  

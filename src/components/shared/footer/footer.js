@@ -9,8 +9,8 @@ export const UsefulLinks = () => (
   <>
   <h4>useful links</h4>
   <ul>
-    <li><a href="teachers">Our Teachers</a></li>
-    <li><a href="course">Our Courses</a></li>
+    <li><a href="tutors">Our Tutors</a></li>
+    <li><a href="courses">Our Courses</a></li>
     <li><a href="categories">Course Categories</a></li>
   </ul>
   </>

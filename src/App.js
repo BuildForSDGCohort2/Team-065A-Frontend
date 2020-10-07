@@ -44,7 +44,8 @@ import Footer from './components/shared/footer/footer';
 import axios from 'axios'
 import Dashboard from "./pages/Dashboard/dashboard";
 import Courses from "./pages/courses/courses";
-// import Home from "./components/Home/home";
+import Tutors from "./pages/tutors/tutors";
+import Blog from "./pages/blog/blog";
 
 export default class App extends Component {
   constructor(props) {
@@ -119,6 +120,8 @@ export default class App extends Component {
               <Route path='/contact-us' component={ContactUs} />
               <Route path='/about-us' component={AboutUS} />
               <Route path='/courses' component={Courses} />
+              <Route path='/tutors' component={Tutors} />
+              <Route path='/blog' component={Blog} />
             </Switch>
           </BrowserRouter>
           </main>

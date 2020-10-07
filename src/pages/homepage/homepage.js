@@ -11,8 +11,8 @@ const HomePage = () => (
     <Slides />
     <div className='homepage'>
       <main>
-        <EventComponent/>
         <ProductComponent/>
+        <EventComponent/>
         <NewsComponent />
       </main>
     </div>

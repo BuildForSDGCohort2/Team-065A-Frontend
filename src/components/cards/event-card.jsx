@@ -23,7 +23,7 @@ export const CourseCard = (props) => (
 );
 
 const EventComponent = () => (
-  <div className = 'event-card'>
+  <div className = 'event-card text-center'>
     <TitleComponent title = 'OUR COURSES' subtitle= 'Our most popular courses'/>
     <Container>
       <Row>
@@ -46,6 +46,7 @@ const EventComponent = () => (
           />
         </Col>
       </Row>
+      <a href="/courses"><CustomBtn className='custom-button see-all'>SEE ALL COURSES</CustomBtn></a>
     </Container>
   </div>
 )

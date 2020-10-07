@@ -12,7 +12,7 @@ import BxsChatIcon from '../icons/chat.components.jsx';
 import './news-card.css';
 
 const NewsComponent = () => (
-    <div classNameName = 'news-card'>
+    <div className = 'news-card'>
     <TitleComponent title = 'LATEST NEWS' subtitle= 'There are many variation of passages'/>
     <Container>
     <Row>

@@ -43,6 +43,7 @@ import CustomNav from './components/shared/navbar/custom-nav';
 import Footer from './components/shared/footer/footer';
 import axios from 'axios'
 import Dashboard from "./pages/Dashboard/dashboard";
+import Courses from "./pages/courses/courses";
 // import Home from "./components/Home/home";
 
 export default class App extends Component {
@@ -117,6 +118,7 @@ export default class App extends Component {
               <Route path='/sign_up' component={SignUpPage} />
               <Route path='/contact-us' component={ContactUs} />
               <Route path='/about-us' component={AboutUS} />
+              <Route path='/courses' component={Courses} />
             </Switch>
           </BrowserRouter>
           </main>

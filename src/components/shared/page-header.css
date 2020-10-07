@@ -1,0 +1,27 @@
+.transparent-header {
+  width: 100%;
+  text-align: center;
+  background: no-repeat center/cover url('/images/open-book.jpg');
+}
+
+.transparent-header img {
+  opacity: 0.5;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.transparent-header .overlay {
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.transparent-header .overlay h1 {
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+  padding: 2em 5px;
+}

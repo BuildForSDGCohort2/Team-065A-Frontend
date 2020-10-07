@@ -5,7 +5,7 @@ import CustomBtn from '../../components/shared/button/custom-btn';
 
 const Slides = () =>
 (
-  <Carousel className="slides" fade="true">
+  <Carousel className="slides" fade={true}>
     <Carousel.Item>
       <img className="d-block w-100"
         src="/images/children-in-school.jpeg" alt="slide1" />

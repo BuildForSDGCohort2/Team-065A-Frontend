@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import CustomBtn from '../shared/button/custom-btn';
 import TitleComponent from '../title/title.component';
-import SuitHeartFillIcon from '../icons/love.components';
-import ArrowsRotateIcon from '../icons/arrows.component';
+// import SuitHeartFillIcon from '../icons/love.components';
+// import ArrowsRotateIcon from '../icons/arrows.component';
 import StarIcon from '../icons/stars.component';
 
 import './product-card.css';

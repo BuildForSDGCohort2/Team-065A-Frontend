@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import TitleComponent from "../../components/title/title.component";
 import { TutorCard } from "../../components/cards/product-card";
-import CustomBtn from "../../components/shared/button/custom-btn";
 
 const Tutors = () => (
   <>

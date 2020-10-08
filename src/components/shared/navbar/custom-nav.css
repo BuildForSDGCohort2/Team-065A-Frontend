@@ -96,15 +96,61 @@
   border: 2px solid #86bc42;
 }
 
+#get-the-app {
+  margin-top: 17px;
+  margin-bottom: 0;
+  border: none;
+}
+
+#get-the-app:hover {
+  border: none;
+}
+
+.appetize-logo {
+  height: 50px;
+  width: auto;
+}
+
+.my-account {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   .ml-auto {
-    background: #2d3e50;
     text-align: center;
   }
   
   .ml-auto .nav-link {
     margin: auto;
   }
+}
+
+@media screen and (max-width: 776px) {
+  .skewed-div, .short-div {
+    display: none;
+  }
+
+  .my-account {
+    display: block;
+    position: absolute;
+    right: 15px;
+    -webkit-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    transform: skew(-30deg);
+  }
+
+  .my-account .top-right {
+    font-size: inherit;
+    font-weight: normal;
+  }
+
+  .my-account .first {
+    display: none;
+  }
+
 }
 
 .navbar {

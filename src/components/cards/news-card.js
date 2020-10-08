@@ -33,7 +33,7 @@ export const BlogCard = (props) => (
 const NewsComponent = () => (
     <div className = 'news-card text-center'>
       <TitleComponent title = 'LATEST POSTS' subtitle= 'Read educational posts from our tutors'/>
-      <Container fluid>
+      <Container>
         <Row>
           <Col lg={6} md={12} sm={12}>
             <BlogCard img="/images/1.jpg"

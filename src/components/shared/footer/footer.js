@@ -21,12 +21,12 @@ const Summary = () => (
     <>
       <img className="footer-logo" src="/images/quateach_w.svg" alt="QuaTeach Logo" />
       <p>
-        At QuaTeach, we believe that quality education is a basic human right.<br/> 
-        With our team of exceptional tutors, we seek to level the playing field<br/>
+        At QuaTeach, we believe that quality education is a basic human right. 
+        With our team of exceptional tutors, we seek to level the playing field
         in education by making quality teaching available at all levels in Africa.
       </p>
       <p>
-        If you would like a our vision and would love to partner with us, feel<br/>
+        If you would like a our vision and would love to partner with us, feel
         to reach out to us via the listed contacts.
       </p>
     </>
@@ -63,7 +63,7 @@ const Footer = () => (
       <div className="copyright">
         <Container>
           <span>
-            &copy; QuaTeach 2020. All Rights Reserved. <span className="pull-right"><a href="/privacy-policy">Privacy Policy.</a> <a href="/terms-and-conditions">Terms & Conditions</a></span>
+            &copy; QuaTeach 2020. All Rights Reserved. <span className="pull-right policy"><a href="/privacy-policy">Privacy Policy.</a> <a href="/terms-and-conditions">Terms & Conditions</a></span>
           </span>
         </Container>
       </div>

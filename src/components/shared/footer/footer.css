@@ -1,6 +1,7 @@
 /** WRITE YOUR FOOTER CSS HERE. DON'T EDIT THE COMMENT PLEASE. **/
 
 .footer {
+  margin-top: 2em;
   padding-top: 3.5em;
   background: #2d3e50;
   color: #fff;
@@ -50,4 +51,11 @@ a:hover {
   background: #86BC42;
   font-size: 12px;
   margin-top: 2em;
+}
+
+@media screen and (max-width: 433px) {
+  .copyright .policy {
+    float: none;
+    display: block;
+  }
 }

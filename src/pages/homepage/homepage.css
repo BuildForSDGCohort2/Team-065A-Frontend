@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 80px;
+    /* padding: 20px 80px; */
     /* margin-top: 30%; */
 }
 
@@ -45,8 +45,8 @@
 
 .carousel-caption a {
     position: relative;
-    margin: auto;
     left: -50%;
+    bottom: 25px;
 }
 
 .carousel-caption h3 {

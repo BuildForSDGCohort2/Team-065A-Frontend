@@ -10,8 +10,8 @@ import './custom-nav.css';
 
 const MyAccount = () => (
   <>
-    <div className="top-right first">You are not logged in<span className="divider-span">|</span> </div>
-    <div className="top-right"><img src="/images/user.png" alt="user" /><a href="/dashboard">Login</a></div>
+    <div className="top-right first">You are not logged in<span className="divider-span"><a href="/sign_up">Register </a>|</span> </div>
+    <div className="top-right"><img src="/images/user.png" alt="user" /><a href="/sign_in">Login</a></div>
   </>
 );
 

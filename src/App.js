@@ -57,13 +57,14 @@ export default class App extends Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   checkLoginStatus() {
     axios.get("https://authentication-backend-rails.herokuapp.com/logged_in", { withCredentials: true })
       .then(response => {
         // console.log(response.data.data)
-        console.log(response.data.data)
+        // console.log(response.data.data)
         if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
           
           this.setState({
@@ -83,14 +84,38 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.checkLoginStatus();
+    // this.checkLoginStatus();
+    const user = JSON.parse(localStorage.getItem('user'));
+    if(user){
+      console.log('user found', user)
+      this.setState({
+        loggedInStatus: "LOGGED_IN",
+        user
+      })
+    }else{
+      console.log('user not found')
+    }
+  }
+
+  // componentDidUpdate(){
+  //   this.handleLogin();
+  // }
+
+  handleLogout(){
+    this.setState({
+      loggedInStatus: "NONE",
+      user: {}
+      })
+      localStorage.removeItem('user');
+      this.props.history.push('/home');
   }
 
   handleLogin(data) {
     this.setState({
       loggedInStatus: "LOGGED_IN",
-      user: data.user
+      user: data
     })
+    localStorage.setItem('user', JSON.stringify(data));
   }
 
   render() {
@@ -106,7 +131,7 @@ export default class App extends Component {
                 exact
                 path={"/dashboard"}
                 render={props => (
-                  <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                  <Dashboard {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} />
                 )}
               />
               <Route exact path='/' component={HomePage} />

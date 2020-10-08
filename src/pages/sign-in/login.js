@@ -11,6 +11,7 @@ export default class Login extends Component {
 
   handleSuccessfulAuth(data) {
       this.props.handleLogin(data);
+      console.log('from login.js', data);
     //   redirecting the user
     this.props.history.push("/dashboard");
   }

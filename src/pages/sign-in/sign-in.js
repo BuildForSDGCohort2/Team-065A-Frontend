@@ -1,16 +1,3 @@
-// import React from 'react';
-// import './sign-in.css';
-
-// const SignInPage = (props) => {
-//   return(
-//     <div className="sign-in">
-//     </div>
-//    )
-
-//  }
-
-// export default SignInPage;
-
 import React, { Component } from "react";
 import axios from "axios";
 import "./sign-in.css";
@@ -52,9 +39,9 @@ export default class SignInPage extends Component {
       .then((response) => {
         // console.log('from signin.js', response.data.data);
         this.props.handleSuccessfulAuth(response.data);
-        if (response.data.logged_in) {
-          this.props.handleSuccessfulAuth(response.data);
-        }
+        // if (response.data.logged_in) {
+        //   this.props.handleSuccessfulAuth(response.data);
+        // }
         // console.log("login response", response);
       })
       .catch((error) => {
@@ -76,6 +63,7 @@ export default class SignInPage extends Component {
             type="submit"
             value="Sign in"
           />
+          <p className="alternate-form-link"><a href="/sign_up">I'm new here.</a></p>
         </form>
       </div>
     );

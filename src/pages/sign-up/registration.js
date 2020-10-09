@@ -1,4 +1,6 @@
+import { render } from "@testing-library/react";
 import React, { Component } from "react";
+import { CustomAlert } from "../../components/alerts/alerts";
 import SignUpPage from "./sign-up";
 
 
@@ -10,18 +12,17 @@ export default class Registration extends Component {
   }
 
   handleSuccessfulAuth(data) {
-      this.props.handleLogin(data);
+    this.props.handleLogin(data);
     //   redirecting the user
     this.props.history.push("/dashboard");
+    render(<CustomAlert type="success" message="Account created successfully." />, document.getElementById("info"));
   }
 
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <h1>Status: {this.props.loggedInStatus}</h1>
+      <>
         <SignUpPage handleSuccessfulAuth={this.handleSuccessfulAuth} />
-      </div>
+      </>
     );
   }
 }

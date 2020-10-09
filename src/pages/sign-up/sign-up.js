@@ -1,16 +1,3 @@
-// import React from 'react';
-// import './sign-up.css';
-
-// const SignUpPage = (props) => {
-//   return(
-//     <div className="sign-up">
-
-//     </div>
-//    );
-//  }
-
-// export default SignUpPage;
-
 import React, { Component } from "react";
 import axios from "axios";
 import "./sign-up.css";
@@ -155,6 +142,7 @@ export default class SignUpPage extends Component {
             type="submit"
             value="Register"
           />
+          <p className="alternate-form-link"><a href="/sign_in">I have an account.</a></p>
         </form>
       </div>
     );

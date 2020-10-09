@@ -10,19 +10,16 @@ export default class Login extends Component {
   }
 
   handleSuccessfulAuth(data) {
-      this.props.handleLogin(data);
-      console.log('from login.js', data);
+    this.props.handleLogin(data);
     //   redirecting the user
     this.props.history.push("/dashboard");
   }
 
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <h1>Status: {this.props.loggedInStatus}</h1>
+      <>
         <SignInPage handleSuccessfulAuth={this.handleSuccessfulAuth} />
-      </div>
+      </>
     );
   }
 }

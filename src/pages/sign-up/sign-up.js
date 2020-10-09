@@ -50,6 +50,7 @@ export default class SignUpPage extends Component {
       full_name,
       user_type,
     } = this.state;
+
     axios
       .post(
         "https://team065a-backend-arch.herokuapp.com/api/v1/sign_up",
@@ -69,7 +70,7 @@ export default class SignUpPage extends Component {
         if (response.data.status === "Success") {
           this.props.handleSuccessfulAuth(response.data);
         }
-        console.log("signup response", response);
+        // console.log("signup response", response);
       })
       .catch((error) => {
         console.log("signup error", error);

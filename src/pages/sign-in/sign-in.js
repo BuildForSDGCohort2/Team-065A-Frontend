@@ -51,7 +51,7 @@ export default class SignInPage extends Component {
       )
       .then((response) => {
         // console.log('from signin.js', response.data.data);
-        this.props.handleSuccessfulAuth(response.data.data);
+        this.props.handleSuccessfulAuth(response.data);
         if (response.data.logged_in) {
           this.props.handleSuccessfulAuth(response.data);
         }

@@ -107,7 +107,8 @@ export default class App extends Component {
       user: {}
       })
       localStorage.removeItem('user');
-      this.props.history.push('/home');
+      // this.props.history.push('/home');
+      // console.log(props.history)
   }
 
   handleLogin(data) {

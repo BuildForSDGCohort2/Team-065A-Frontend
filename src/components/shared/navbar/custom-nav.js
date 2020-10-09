@@ -49,7 +49,7 @@ const CustomNav = () => (
               target="_blank"
               href="https://appetize.io/app/y6mn4x2f6uhw1btvrt4k0vrrx8?device=nexus5&scale=75&orientation=portrait&osVersion=8.1"
             >
-              <img class="appetize-logo" src="/images/demo-app.png" alt="Appetize.io"/>
+              <img className="appetize-logo" src="/images/demo-app.png" alt="Appetize.io"/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

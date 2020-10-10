@@ -29,9 +29,24 @@
   display: table-cell;
 }
 
-@media screen and (max-width: 776px) {
-  
-  .card, .blog-card {
-    
-  }
+.alternate-form-link a {
+  color:  #2d3e50;
+}
+
+.alternate-form-link a:hover {
+  color:  #2d3e50;
+  text-decoration: underline;
+}
+
+.no-show {
+  display: none;
+}
+
+.alert {
+  max-width: 80%;
+  margin: auto;
+}
+
+.loading {
+  color: black;
 }

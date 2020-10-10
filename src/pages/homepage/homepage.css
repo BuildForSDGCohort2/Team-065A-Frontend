@@ -10,6 +10,10 @@
     width: 100%;
 }
 
+.product-card {
+    margin-top: 4em;
+}
+
 .carousel-indicators {
     display: none !important;
 }

@@ -1,20 +1,8 @@
-// import React from 'react';
-// import './sign-up.css';
-
-// const SignUpPage = (props) => {
-//   return(
-//     <div className="sign-up">
-
-//     </div>
-//    );
-//  }
-
-// export default SignUpPage;
-
 import React, { Component } from "react";
 import axios from "axios";
 import "./sign-up.css";
 import { EmailField, PasswordField } from "../../components/auth/auth";
+import { trackPromise } from "react-promise-tracker";
 
 export default class SignUpPage extends Component {
   constructor(props) {
@@ -50,30 +38,31 @@ export default class SignUpPage extends Component {
       full_name,
       user_type,
     } = this.state;
-    axios
-      .post(
-        "https://team065a-backend-arch.herokuapp.com/api/v1/sign_up",
-        {
-          users: {
-            email: email,
-            password: password,
-            password_confirmation: password_confirmation,
-            phone: phone,
-            full_name: full_name,
-            user_type: user_type,
+
+    trackPromise (
+      axios
+        .post(
+          "https://team065a-backend-arch.herokuapp.com/api/v1/sign_up",
+          {
+            users: {
+              email: email,
+              password: password,
+              password_confirmation: password_confirmation,
+              phone: phone,
+              full_name: full_name,
+              user_type: user_type,
+            },
           },
-        },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        if (response.data.status === "Success") {
-          this.props.handleSuccessfulAuth(response.data);
-        }
-        console.log("signup response", response);
-      })
-      .catch((error) => {
-        console.log("signup error", error);
-      });
+          { withCredentials: true }
+        )
+        .then((response) => {
+          if (response.data.status === "Success") {
+            this.props.handleSuccessfulAuth(response.data);
+          }
+        })
+        .catch((error) => {
+          console.log("signup error", error);
+    }));
     console.log("form submitted");
     event.preventDefault();
   }
@@ -154,6 +143,7 @@ export default class SignUpPage extends Component {
             type="submit"
             value="Register"
           />
+          <p className="alternate-form-link"><a href="/sign_in">I have an account.</a></p>
         </form>
       </div>
     );

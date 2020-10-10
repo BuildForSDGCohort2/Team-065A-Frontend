@@ -67,6 +67,12 @@
   margin-right: 12px;
 }
 
+.top-right button {
+  color: #fff;
+  border: none;
+  background: inherit;
+}
+
 .divider-span {
   margin: auto 10px;
   font-weight: bolder;

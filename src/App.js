@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage';
 import './App.css';
-import AboutUS from './pages/about-us/about-us';
-import ContactUs from './pages/contact-us/contact-us';
+// import AboutUS from './pages/about-us/about-us';
+// import ContactUs from './pages/contact-us/contact-us';
 import CustomNav from './components/shared/navbar/custom-nav';
 import Footer from './components/shared/footer/footer';
 import Dashboard from "./pages/Dashboard/dashboard";
@@ -12,8 +12,10 @@ import Tutors from "./pages/tutors/tutors";
 import Blog from "./pages/blog/blog";
 import Login from "./pages/sign-in/login";
 import Registration from "./pages/sign-up/registration";
-import { render } from "@testing-library/react";
+import { render } from "react-dom";
 import { CustomAlert } from "./components/alerts/alerts";
+import axios from "axios";
+import { trackPromise } from "react-promise-tracker";
 
 export default class App extends Component {
   constructor(props) {
@@ -22,10 +24,15 @@ export default class App extends Component {
     this.state = {
       loggedInStatus: "You are not logged in",
       user: "Guest",
+      tutors: [],
+      courses: [],
+      posts: []
     };
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.checkLoginStatus = this.checkLoginStatus.bind(this);
+    this.getTeachers = this.getTeachers.bind(this);
   }
 
   checkLoginStatus() {
@@ -36,36 +43,48 @@ export default class App extends Component {
         loggedInStatus: "You are logged in",
         user: user.data,
       })
-    }else{
-      console.log('You are logged out')
     }
-    console.log("current user", this.state.user)
   }
-
-  componentDidMount() {
-    this.checkLoginStatus();
-  }
-
 
   handleLogout(){
     this.setState({
-      loggedInStatus: "Your are logged out",
+      loggedInStatus: "You are logged out",
       user: {},
     })
     localStorage.removeItem('user');
     render(<CustomAlert type="info" message="Logged out successfully" />, document.getElementById('info'));
+    this.checkLoginStatus()
   }
 
   handleLogin(data) {
     console.log('data in handleLogin', data)
     this.setState({
       loggedInStatus: "You are logged in",
-      flash: "Logged in successfully!"
     })
     console.log('from handleLogin', this.state.user)
     localStorage.setItem('user', JSON.stringify(data));
     this.checkLoginStatus();
     render(<CustomAlert type="success" message="Logged in successfully" />, document.getElementById("info"));
+  }
+
+  getTeachers() {
+    trackPromise(
+      axios
+        .get(
+          "https://team065a-backend-arch.herokuapp.com/api/v1/teachers")
+        .then((response) => {
+          console.log("fetched teachers", response.data);
+          this.setState({tutors: response.data.data});
+          console.log("state", this.state.tutors);
+        })
+        .catch((error) => {
+          console.log("error", error);
+    }));
+  }
+
+  componentDidMount() {
+    this.checkLoginStatus();
+    // this.getTeachers();
   }
 
   render() {
@@ -100,11 +119,27 @@ export default class App extends Component {
                   <Registration {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
                 )}
               />
-              <Route path='/contact-us' component={ContactUs} />
-              <Route path='/about-us' component={AboutUS} />
-              <Route path='/courses' component={Courses} />
-              <Route path='/tutors' component={Tutors} />
-              <Route path='/blog' component={Blog} />
+              <Route
+                exact 
+                path={"/courses"} 
+                render={props => (
+                  <Courses {...props}  />
+                )}
+              />
+              <Route
+                exact 
+                path={"/tutors"} 
+                render={props => (
+                  <Tutors {...props} getTeachers={this.getTeachers} tutors={this.state.tutors} />
+                )}
+              />
+              <Route
+                exact 
+                path={"/blog"} 
+                render={props => (
+                  <Blog {...props}  />
+                )}
+              />
             </Switch>
           </BrowserRouter>
           </main>

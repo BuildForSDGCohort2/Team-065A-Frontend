@@ -12,17 +12,21 @@ import StarIcon from '../icons/stars.component';
 
 import './product-card.css';
 
-export const TutorCard = (props) => (
-  <Card>
-    <Card.Img variant="top" src={props.img} />
-    <Card.Body>
-      <Card.Title className="font-weight-bold">{props.name}</Card.Title>
-      <Card.Text>{props.description}.</Card.Text>
-      <h6>Rating: <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/></h6> 
-      <a href={props.link}><CustomBtn className='custom-button'>VIEW PROFILE</CustomBtn></a>
-    </Card.Body>
-  </Card>
-);
+export const TutorCard = (props) => {
+  return(
+    <Card>
+      <Card.Img variant="top" src={props.img} />
+      <Card.Body>
+        <Card.Title className="font-weight-bold">{props.name}</Card.Title>
+        <Card.Text>{props.description}.</Card.Text>
+        <h6>Rating:
+          <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
+        </h6> 
+        <a href={props.link}><CustomBtn className='custom-button'>VIEW PROFILE</CustomBtn></a>
+      </Card.Body>
+    </Card>
+  )
+}
 
 const ProductComponent = () => (
   <div className = 'product-card text-center'>

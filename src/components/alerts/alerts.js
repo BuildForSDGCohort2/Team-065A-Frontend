@@ -7,7 +7,7 @@ export function CustomAlert(props) {
 
   if (show) {
     return (
-      <Alert variant={props.type} onClose={() => setShow(false)} dismissible>
+      <Alert className="alert" variant={props.type} onClose={() => setShow(false)} dismissible>
         {props.message}
       </Alert>
     );

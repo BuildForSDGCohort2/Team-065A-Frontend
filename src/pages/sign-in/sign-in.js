@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./sign-in.css";
 import { EmailField, PasswordField } from "../../components/auth/auth";
+import { trackPromise } from "react-promise-tracker";
 
 export default class SignInPage extends Component {
   constructor(props) {
@@ -25,28 +26,29 @@ export default class SignInPage extends Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
-    axios
-      .post(
-        "https://team065a-backend-arch.herokuapp.com/api/v1/sign_in",
-        {
-          login: {
-            email: email,
-            password: password,
+    trackPromise(
+      axios
+        .post(
+          "https://team065a-backend-arch.herokuapp.com/api/v1/sign_in",
+          {
+            login: {
+              email: email,
+              password: password,
+            },
           },
-        },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        // console.log('from signin.js', response.data.data);
-        this.props.handleSuccessfulAuth(response.data);
-        // if (response.data.logged_in) {
-        //   this.props.handleSuccessfulAuth(response.data);
-        // }
-        // console.log("login response", response);
-      })
-      .catch((error) => {
-        console.log("login error", error);
-      });
+          { withCredentials: true }
+        )
+        .then((response) => {
+          // console.log('from signin.js', response.data.data);
+          this.props.handleSuccessfulAuth(response.data);
+          // if (response.data.logged_in) {
+          //   this.props.handleSuccessfulAuth(response.data);
+          // }
+          // console.log("login response", response);
+        })
+        .catch((error) => {
+          console.log("login error", error);
+      }));
     console.log("form submitted");
     event.preventDefault();
   }

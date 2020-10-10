@@ -41,3 +41,12 @@
 .no-show {
   display: none;
 }
+
+.alert {
+  max-width: 80%;
+  margin: auto;
+}
+
+.loading {
+  color: black;
+}

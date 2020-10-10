@@ -14,7 +14,7 @@ const MyAccount = props => {
       {props.user.full_name ? 
       <>
         <div className="top-right"><img src="/images/user.png" alt="user" /><a href="/dashboard">{props.user.full_name}</a><span className="divider-span">|</span></div>
-        <div className="top-right first"><a href="/sign_in" onClick={props.handleLogout}>Logout</a></div>
+        <div className="top-right first"><button href="/sign_in" onClick={props.handleLogout}>Logout</button></div>
       </> :
       <>
         <div className="top-right"><img src="/images/user.png" alt="user" /><a href="/sign_in">Login</a><span className="divider-span">|</span></div>
@@ -49,11 +49,10 @@ const CustomNav = ({user, handleLogout}) => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/courses">Courses</Nav.Link>
             <Nav.Link href="/tutors">Tutors</Nav.Link>
             <Nav.Link href="/blog">Blog</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link id="get-the-app"
               rel="noopener noreferrer"
               target="_blank"

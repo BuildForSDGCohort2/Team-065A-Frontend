@@ -33,11 +33,12 @@ export default class App extends Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.checkLoginStatus = this.checkLoginStatus.bind(this);
     this.getTeachers = this.getTeachers.bind(this);
+    this.getCourses = this.getCourses.bind(this);
+    this.getPosts = this.getPosts.bind(this);
   }
 
   checkLoginStatus() {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log("got user from cookie", user)
     if(user){
       this.setState({
         loggedInStatus: "You are logged in",
@@ -57,11 +58,10 @@ export default class App extends Component {
   }
 
   handleLogin(data) {
-    console.log('data in handleLogin', data)
     this.setState({
       loggedInStatus: "You are logged in",
     })
-    console.log('from handleLogin', this.state.user)
+
     localStorage.setItem('user', JSON.stringify(data));
     this.checkLoginStatus();
     render(<CustomAlert type="success" message="Logged in successfully" />, document.getElementById("info"));
@@ -73,18 +73,41 @@ export default class App extends Component {
         .get(
           "https://team065a-backend-arch.herokuapp.com/api/v1/teachers")
         .then((response) => {
-          console.log("fetched teachers", response.data);
           this.setState({tutors: response.data.data});
-          console.log("state", this.state.tutors);
         })
         .catch((error) => {
           console.log("error", error);
     }));
   }
 
+  getCourses() {
+    trackPromise(
+      axios
+        .get(
+          "https://team065a-backend-arch.herokuapp.com/api/v1/courses")
+        .then((response) => {
+          this.setState({courses: response.data.data});
+        })
+        .catch((error) => {
+          console.log("error", error);
+      }));
+  }
+  
+  getPosts() {
+    trackPromise(
+      axios
+        .get(
+          "https://team065a-backend-arch.herokuapp.com/api/v1/posts")
+        .then((response) => {
+          this.setState({posts: response.data.data});
+        })
+        .catch((error) => {
+          console.log("error", error);
+      }));
+  }
+
   componentDidMount() {
     this.checkLoginStatus();
-    // this.getTeachers();
   }
 
   render() {
@@ -104,7 +127,13 @@ export default class App extends Component {
                   <Dashboard {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.loggedInStatus} user={this.state.user} />
                 )}
               />
-              <Route exact path='/' component={HomePage} />
+              <Route
+                exact 
+                path={"/"} 
+                render={props => (
+                  <HomePage {...props} getTeachers={this.getTeachers} getCourses={this.getCourses} getPosts={this.getPosts} tutors={this.state.tutors} courses={this.state.courses} posts={this.state.posts} />
+                )}
+              />
               <Route
                 exact 
                 path={"/sign_in"} 
@@ -123,7 +152,7 @@ export default class App extends Component {
                 exact 
                 path={"/courses"} 
                 render={props => (
-                  <Courses {...props}  />
+                  <Courses {...props} getCourses={this.getCourses} courses={this.state.courses}   />
                 )}
               />
               <Route
@@ -137,7 +166,7 @@ export default class App extends Component {
                 exact 
                 path={"/blog"} 
                 render={props => (
-                  <Blog {...props}  />
+                  <Blog {...props} getPosts={this.getPosts} posts={this.state.posts}  />
                 )}
               />
             </Switch>

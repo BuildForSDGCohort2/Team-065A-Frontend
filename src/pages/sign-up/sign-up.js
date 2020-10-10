@@ -59,7 +59,6 @@ export default class SignUpPage extends Component {
           if (response.data.status === "Success") {
             this.props.handleSuccessfulAuth(response.data);
           }
-          // console.log("signup response", response);
         })
         .catch((error) => {
           console.log("signup error", error);

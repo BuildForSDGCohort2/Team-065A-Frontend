@@ -30,3 +30,12 @@
   padding: .8em;
   top: 8.5em
 }
+
+a.taught-by {
+  color: #2d3e50;
+}
+
+a.taught-by:hover {
+  color: #2d3e50;
+  text-decoration: underline;
+}

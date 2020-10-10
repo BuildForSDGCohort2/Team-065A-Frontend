@@ -39,12 +39,7 @@ export default class SignInPage extends Component {
           { withCredentials: true }
         )
         .then((response) => {
-          // console.log('from signin.js', response.data.data);
           this.props.handleSuccessfulAuth(response.data);
-          // if (response.data.logged_in) {
-          //   this.props.handleSuccessfulAuth(response.data);
-          // }
-          // console.log("login response", response);
         })
         .catch((error) => {
           console.log("login error", error);

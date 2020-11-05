@@ -1,5 +1,6 @@
 // WRITE YOUR PRODUCT CARD CODE HERE. DON'T EDIT THE COMMENT PLEASE.
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CustomBtn from '../shared/button/custom-btn';
 import StarIcon from '../icons/stars.component';
@@ -16,7 +17,9 @@ export const TutorCard = (props) => {
         <h6>Rating:
           <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
         </h6> 
-        <a href={props.link}><CustomBtn className='custom-button'>VIEW PROFILE</CustomBtn></a>
+        <Link to={`/tutors/${props.name}`}>
+        <CustomBtn className='custom-button'>VIEW PROFILE</CustomBtn>
+        </Link>
       </Card.Body>
     </Card>
   )

@@ -16,6 +16,7 @@ import { render } from "react-dom";
 import { CustomAlert } from "./components/alerts/alerts";
 import axios from "axios";
 import { trackPromise } from "react-promise-tracker";
+import TutorInfo from "./pages/tutor-info/TutorInfo";
 
 export default class App extends Component {
   constructor(props) {
@@ -162,6 +163,13 @@ export default class App extends Component {
                   <Tutors {...props} getTeachers={this.getTeachers} tutors={this.state.tutors} />
                 )}
               />
+              <Route
+              exact 
+              path={"/tutors/:info"} 
+              render={props => (
+                <TutorInfo {...props} getTeachers={this.getTeachers} tutors={this.state.tutors} />
+              )}
+            />
               <Route
                 exact 
                 path={"/blog"} 

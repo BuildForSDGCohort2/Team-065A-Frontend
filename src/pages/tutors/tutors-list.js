@@ -21,7 +21,6 @@ export const TutorsList = ({tutors, rows}) => {
             <Col lg={3} md={4} sm={12} key={tutor.info.user.id}>
                 <TutorCard img={"/images/avatar.png"}
                   name={tutor.info.user.full_name}
-                  link="/tutors"
                   description={tutor.info.user.address}
                   rating={tutor.info.rating}
                 />

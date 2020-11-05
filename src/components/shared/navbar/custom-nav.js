@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import './custom-nav.css';
 
 const MyAccount = props => {
-  return (
+  return  props.user ? (
     <>
       {props.user.full_name ? 
       <>
@@ -22,6 +22,10 @@ const MyAccount = props => {
       </>
       }
     </>
+  ) : (
+    <div>
+    shola
+    </div>
   )
 }
 

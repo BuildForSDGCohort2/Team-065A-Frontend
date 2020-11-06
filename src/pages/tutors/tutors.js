@@ -7,7 +7,7 @@ import TitleComponent from "../../components/title/title.component";
 // import { TutorCard } from "../../components/cards/product-card";
 // import axios from "axios";
 // import { trackPromise } from "react-promise-tracker";
-import { TutorsList } from "./tutors-list";
+import { TutorsAll } from "./tutors-all";
 
 class Tutors extends Component {
 
@@ -22,7 +22,7 @@ class Tutors extends Component {
         <div className="tutors-list">
           <TitleComponent title = 'ALL TUTORS' subtitle= 'Meet all our amazing tutors' />
           <Container>
-            <TutorsList tutors={this.props.tutors} />
+            <TutorsAll tutors={this.props.tutors} />
           </Container>
         </div>
       </>

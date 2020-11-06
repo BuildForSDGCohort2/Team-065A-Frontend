@@ -157,19 +157,19 @@ export default class App extends Component {
                 )}
               />
               <Route
+              exact 
+              path={"/tutor/:info"} 
+              render={props => (
+                <TutorInfo {...props} tutors={this.state.tutors} />
+              )}
+            />
+              <Route
                 exact 
                 path={"/tutors"} 
                 render={props => (
                   <Tutors {...props} getTeachers={this.getTeachers} tutors={this.state.tutors} />
                 )}
               />
-              <Route
-              exact 
-              path={"/tutors/:info"} 
-              render={props => (
-                <TutorInfo {...props} getTeachers={this.getTeachers} tutors={this.state.tutors} />
-              )}
-            />
               <Route
                 exact 
                 path={"/blog"} 

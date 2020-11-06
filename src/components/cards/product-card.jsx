@@ -17,7 +17,7 @@ export const TutorCard = (props) => {
         <h6>Rating:
           <StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/>
         </h6> 
-        <Link to={`/tutors/${props.name}`}>
+        <Link to={`/tutor/${props.name}`}>
         <CustomBtn className='custom-button'>VIEW PROFILE</CustomBtn>
         </Link>
       </Card.Body>
